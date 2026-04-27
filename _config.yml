@@ -16,7 +16,7 @@ timezone: America/New_York
 
 title: wh0islck's Blog # the main title
 
-tagline: ML/AI, Writeups and blog # it will display as the subtitle
+tagline: Security Writeups and Blog # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   ML/AI, writeups, notes, and technical posts.
@@ -28,14 +28,14 @@ url: "https://wh0islck.github.io"
 github:
   username: wh0islck # change to your GitHub username
 
-twitter:
-  username: # change to your Twitter username
+#twitter:
+#  username: # change to your Twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: wh0islck
-  email: # change to your email address
+#  email: # change to your email address
   fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
   links:
     # The first element serves as the copyright owner's link
@@ -98,7 +98,7 @@ theme_mode: dark # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://avatars.githubusercontent.com/u/154997465?v=4
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
