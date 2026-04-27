@@ -14,19 +14,19 @@ timezone: America/New_York
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: wh0islck's Blog # the main title
+title: wh0islck # the main title
 
-tagline: Security Writeups and Blog # it will display as the subtitle
+tagline: ML/AI, Cybersec writeups, programming notes, and technical posts. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  ML/AI, writeups, notes, and technical posts.
+  ML/AI, Cybersec writeups, programming notes, and technical posts.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://wh0islck.github.io"
 
-github:
-  username: wh0islck # change to your GitHub username
+#github:
+#  username: wh0islck # change to your GitHub username
 
 #twitter:
 #  username: # change to your Twitter username
@@ -37,9 +37,9 @@ social:
   name: wh0islck
 #  email: # change to your email address
   fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
-  links:
+#  links:
     # The first element serves as the copyright owner's link
-    - https://github.com/wh0islck # change to your GitHub homepage
+#    - https://github.com/wh0islck # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
