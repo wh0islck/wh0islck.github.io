@@ -28,3 +28,9 @@ assets/js/dist
 
 .codex
 .obsidian
+.vscode
+# IDE configurations
+.idea
+.vscode
+!.vscode/settings.json
+!.vscode/extensions.json
