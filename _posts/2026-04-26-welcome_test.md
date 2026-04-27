@@ -6,7 +6,7 @@ categories:
 tags:
   - Blog
 image:
-  path: https://i.pinimg.com/originals/ff/91/42/ff914235a6edc4bd006b5b0d48b50992.gif
+  path: https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzR0bmd2ZnQybmxleHYzbnk5OHdjZXBpNWtsaHIzem5tZjhxaWtkeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Tz30dcgKE3GCTYpxol/giphy.gif
 ---
 
 # Introduction
