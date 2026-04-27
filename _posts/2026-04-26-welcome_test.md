@@ -1,0 +1,58 @@
+---
+title: Welcome to the Blog - Test
+date: 2026-04-26 19:17:00 -0400
+categories:
+  - Blog
+tags:
+  - Blog
+image:
+  path: https://i.pinimg.com/originals/ff/91/42/ff914235a6edc4bd006b5b0d48b50992.gif
+---
+
+# Introduction
+
+Hello there, everyone!
+
+This is the first post on this blog. I am setting this place up to keep my
+writeups, notes, experiments, and random technical thoughts in one public
+archive.
+
+The main idea is simple: if I learn something useful, break something in a lab,
+debug a weird issue, or find a detail worth remembering, it should probably end
+up here.
+
+# What This Blog Is About
+
+I want this blog to feel more like a field notebook than a polished portfolio.
+
+Some posts will be clean writeups. Some will be short notes. Some will probably
+be me trying to understand why a tool behaved in a strange way at 2 AM.
+
+The topics will mostly orbit around:
+
+- web security;
+- CTFs and labs;
+- ML/AI experiments;
+- programming notes;
+- Linux and tooling;
+- things I do not want to forget.
+
+# The Format
+
+For writeups, I will try to keep the structure easy to follow:
+
+1. What happened.
+2. What I tried.
+3. What worked.
+4. Why it worked.
+5. What I learned.
+
+That format makes posts easier to scan later, especially when I only need one
+command, payload, concept, or mistake from an old note.
+
+# What's Next?
+
+Next I want to add more real writeups, better cover images, and a cleaner rhythm
+for publishing. This post is just the starting point.
+
+Until next time.
