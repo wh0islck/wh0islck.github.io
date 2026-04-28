@@ -1,8 +1,8 @@
 ---
-title: "MLflow Setup & MLOps"
+title: "MLflow Setup"
 date: 2026-04-27 20:48:55 -0400
-categories: [ML-IA, MLOps]
-tags: [MLflow, MLOps, ML-IA, Python]
+categories: [ML-IA]
+tags: [MLflow, ML-IA, Python]
 image:
   path: https://i.pinimg.com/originals/5a/a8/69/5aa869da340cbf31e3570f19ea3452a6.gif
 ---
