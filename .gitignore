@@ -26,6 +26,11 @@ package-lock.json
 _sass/vendors
 assets/js/dist
 
+# MLflow local outputs
+mlruns
+mlartifacts
+mlflow.db
+
 .codex
 .obsidian
 .vscode
