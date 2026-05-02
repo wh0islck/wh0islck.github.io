@@ -18,7 +18,7 @@ Add the context, what happened, and why this was interesting.
 
 Explain the steps, observations, payloads, commands, or logic.
 
-```console
+```bash
 $ command here
 ```
 
