@@ -1,5 +1,5 @@
 ---
-title: "MLflow Setup"
+title: "Local MLflow Setup with Poetry and Taskipy"
 date: 2026-04-27 20:48:55 -0400
 categories: [ML-IA]
 tags: [MLflow, ML-IA, Python]
@@ -30,28 +30,44 @@ When training models, it is easy to lose track of important details:
 
 MLflow gives you a way to log those details in a structured way.
 
-# Basic Project Setup
+# Project Setup
 
 I usually prefer starting with a clean Python environment. You can use Poetry or
 a regular virtual environment.
 
 ## Option 1: Using Poetry
 
-```console
+```bash
 $ poetry init
 $ poetry add "mlflow==3.11.1" "pandas>=2.2,<3" scikit-learn
 $ poetry add "graphene>=3,<4"
 $ poetry add --group dev taskipy
-$ poetry shell
+$ poetry install --no-root
 ```
 
 I pinned `pandas` to `<3` because MLflow still expects pandas 2.x in this
 setup. I also added `graphene>=3,<4` because the MLflow UI uses GraphQL, and an
 older GraphQL stack can break the `/graphql` endpoint.
 
+For this kind of study project, I use `poetry install --no-root` because the
+folder is not meant to be installed as a Python package. It is only a project
+environment for running MLflow, scripts, and experiments.
+
+To activate the virtual environment in Poetry 2.x:
+
+```bash
+$ poetry env activate
+```
+
+Then run the command printed by Poetry, for example:
+
+```bash
+$ source .venv/bin/activate
+```
+
 ## Option 2: Using venv
 
-```console
+```bash
 $ python -m venv .venv
 $ source .venv/bin/activate
 $ pip install mlflow scikit-learn pandas
@@ -59,12 +75,12 @@ $ pip install mlflow scikit-learn pandas
 
 After installing MLflow, check if it is available:
 
-```console
+```bash
 $ mlflow --version
 ```
 > `mlflow, version 3.11.1`
 
-# Using Taskipy
+# Taskipy Automation
 
 Instead of typing long commands every time, I prefer creating tasks in
 `pyproject.toml`.
@@ -76,37 +92,32 @@ mlflow-check = "python mlflow_server/server_testfile.py"
 train = "python model/train.py"
 ```
 
-Now the workflow is easier to remember.
+>Now the workflow is easier to remember.
 
-Start the MLflow server:
+The intended flow is:
 
-```console
+1. Start the MLflow server.
+2. Test the connection.
+3. Run the training script.
+
+Start the server in one terminal:
+
+```bash
 $ task mlflow
 ```
 
-In another terminal, test the connection:
+Then, in another terminal:
 
-```console
+```bash
 $ task mlflow-check
-```
-
-Then run the training script:
-
-```console
 $ task train
 ```
 
 # Starting the MLflow UI
 
-For a quick local setup, start the MLflow tracking server:
+The `mlflow` task runs this command:
 
-```console
-$ task mlflow
-```
-
-Or run the command manually:
-
-```console
+```bash
 $ mlflow server --host 127.0.0.1 --port 5000 --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlartifacts
 ```
 
@@ -158,7 +169,7 @@ with mlflow.start_run(run_name="connection-test"):
 
 Run:
 
-```console
+```bash
 $ task mlflow-check
 ```
 
@@ -171,14 +182,14 @@ Create a file called `train.py`:
 ```python
 import mlflow
 import mlflow.sklearn
+from mlflow_server.server import configure_mlflow
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
 
-mlflow.set_tracking_uri("http://127.0.0.1:5000")
-mlflow.set_experiment("mlflow-local-guide")
+configure_mlflow()
 
 X, y = load_iris(return_X_y=True)
 
@@ -211,12 +222,12 @@ with mlflow.start_run():
 
 Run it:
 
-```console
-$ python train.py
+```bash
+$ task train
 ```
 
 After running the script, go back to the MLflow UI and open the
-`mlflow-local-guide` experiment. You should see one run with parameters,
+`my-first-experiment` experiment. You should see one run with parameters,
 metrics, and a logged model artifact.
 
 # Using Autologging
@@ -288,13 +299,13 @@ graphene 2.1.9
 MLflow expected the newer GraphQL AST classes, so I fixed it by installing
 Graphene 3:
 
-```console
+```bash
 $ poetry add "graphene>=3,<4"
 ```
 
 Then I checked if the right objects existed:
 
-```console
+```bash
 $ poetry run python -c "import graphql, graphql.language.ast as ast; print(graphql.__version__); print(hasattr(ast, 'DocumentNode'))"
 ```
 
