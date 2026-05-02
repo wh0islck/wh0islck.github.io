@@ -6,7 +6,6 @@ tags: [MLflow, ML-IA, Python]
 image:
   path: https://i.pinimg.com/originals/5a/a8/69/5aa869da340cbf31e3570f19ea3452a6.gif
 ---
-
 <div style="text-align: justify;" markdown="1">
 
 # Introduction
