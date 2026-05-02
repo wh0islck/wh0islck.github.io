@@ -38,11 +38,11 @@ a regular virtual environment.
 ## Option 1: Using Poetry
 
 ```bash
-$ poetry init
-$ poetry add "mlflow==3.11.1" "pandas>=2.2,<3" scikit-learn
-$ poetry add "graphene>=3,<4"
-$ poetry add --group dev taskipy
-$ poetry install --no-root
+poetry init
+poetry add "mlflow==3.11.1" "pandas>=2.2,<3" scikit-learn
+poetry add "graphene>=3,<4"
+poetry add --group dev taskipy
+poetry install --no-root
 ```
 
 I pinned `pandas` to `<3` because MLflow still expects pandas 2.x in this
@@ -56,28 +56,29 @@ environment for running MLflow, scripts, and experiments.
 To activate the virtual environment in Poetry 2.x:
 
 ```bash
-$ poetry env activate
+poetry env activate
 ```
 
 Then run the command printed by Poetry, for example:
 
 ```bash
-$ source .venv/bin/activate
+source .venv/bin/activate
 ```
 
 ## Option 2: Using venv
 
 ```bash
-$ python -m venv .venv
-$ source .venv/bin/activate
-$ pip install mlflow scikit-learn pandas
+python -m venv .venv
+source .venv/bin/activate
+pip install mlflow scikit-learn pandas
 ```
 
 After installing MLflow, check if it is available:
 
 ```bash
-$ mlflow --version
+mlflow --version
 ```
+
 > `mlflow, version 3.11.1`
 
 # Taskipy Automation
@@ -103,14 +104,14 @@ The intended flow is:
 Start the server in one terminal:
 
 ```bash
-$ task mlflow
+task mlflow
 ```
 
 Then, in another terminal:
 
 ```bash
-$ task mlflow-check
-$ task train
+task mlflow-check
+task train
 ```
 
 # Starting the MLflow UI
@@ -118,7 +119,7 @@ $ task train
 The `mlflow` task runs this command:
 
 ```bash
-$ mlflow server --host 127.0.0.1 --port 5000 --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlartifacts
+mlflow server --host 127.0.0.1 --port 5000 --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlartifacts
 ```
 
 Then open:
@@ -170,7 +171,7 @@ with mlflow.start_run(run_name="connection-test"):
 Run:
 
 ```bash
-$ task mlflow-check
+task mlflow-check
 ```
 
 If everything is working, the test run should appear in the MLflow UI.
@@ -223,7 +224,7 @@ with mlflow.start_run():
 Run it:
 
 ```bash
-$ task train
+task train
 ```
 
 After running the script, go back to the MLflow UI and open the
@@ -300,13 +301,13 @@ MLflow expected the newer GraphQL AST classes, so I fixed it by installing
 Graphene 3:
 
 ```bash
-$ poetry add "graphene>=3,<4"
+poetry add "graphene>=3,<4"
 ```
 
 Then I checked if the right objects existed:
 
 ```bash
-$ poetry run python -c "import graphql, graphql.language.ast as ast; print(graphql.__version__); print(hasattr(ast, 'DocumentNode'))"
+poetry run python -c "import graphql, graphql.language.ast as ast; print(graphql.__version__); print(hasattr(ast, 'DocumentNode'))"
 ```
 
 Expected result:
@@ -339,5 +340,10 @@ later.
 
 - [MLflow Tracking Quickstart](https://mlflow.org/docs/latest/ml/getting-started/quickstart/)
 - [MLflow Documentation](https://mlflow.org/docs/latest/)
+
+----
+
+<img src="/assets/img/posts/Written-By-a-Human-Not-By-AI-Badge-white.png" alt="Written By A Human Not By AI">
+<img src="/assets/img/posts/Written-By-a-Human-Not-By-AI-Badge-black.png" alt="Written By A Human Not By AI">
 
 </div>

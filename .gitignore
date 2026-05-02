@@ -21,6 +21,8 @@ package-lock.json
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/tasks.json
+.codex
+.obsidian
 
 # Misc
 _sass/vendors
@@ -31,11 +33,8 @@ mlruns
 mlartifacts
 mlflow.db
 
-.codex
-.obsidian
-.vscode
+
 # IDE configurations
 .idea
-.vscode
 !.vscode/settings.json
 !.vscode/extensions.json

@@ -743,4 +743,9 @@ The goal is not to make the setup complex. The goal is to make it repeatable.
 
 This is my base development setup. I can extend it depending on the project, but this gives me a solid starting point for Python, backend, frontend, and MLOps-related work.
 
+----
+
+<img src="/assets/img/posts/Written-By-a-Human-Not-By-AI-Badge-white.png" alt="Written By A Human Not By AI">
+<img src="/assets/img/posts/Written-By-a-Human-Not-By-AI-Badge-black.png" alt="Written By A Human Not By AI">
+
 </div>
