@@ -6,7 +6,7 @@ order: 4
 
 # About
 
-Hi, I am `wh0islck`.
+Hi, I am `wh0islu`.
 
 This blog is where I keep writeups, notes, and technical logs about the things I
 am studying or building.
